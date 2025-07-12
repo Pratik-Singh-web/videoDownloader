@@ -6,11 +6,10 @@ import nest_asyncio
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
 import yt_dlp
-import os
 
 nest_asyncio.apply()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")  # Replace with your token
+BOT_TOKEN = '8188460122:AAFSIS7pRVbcpSyYn3BF7uDCUrj4DKk3dCE'  # Replace with your token
 
 DOWNLOAD_DIR = "./downloads"
 LOG_FILE = "logs.txt"
@@ -40,7 +39,6 @@ def download_video(url: str) -> str:
         'format': 'best',
         'merge_output_format': 'mp4',
         'quiet': True,
-        'cookies': 'cookies.txt',
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
